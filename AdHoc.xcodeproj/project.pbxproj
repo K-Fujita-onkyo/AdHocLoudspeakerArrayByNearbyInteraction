@@ -7,18 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0245402AF1B9000030D0A4 /* LoudspeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02453F2AF1B9000030D0A4 /* LoudspeakerModel.swift */; };
+		BF0245462AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0245452AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift */; };
 		BF0B540A2AF05B320060DA89 /* AdHocApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B54092AF05B320060DA89 /* AdHocApp.swift */; };
-		BF0B540C2AF05B320060DA89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B540B2AF05B320060DA89 /* ContentView.swift */; };
+		BF0B540C2AF05B320060DA89 /* TopPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B540B2AF05B320060DA89 /* TopPageView.swift */; };
 		BF0B540E2AF05B340060DA89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0B540D2AF05B340060DA89 /* Assets.xcassets */; };
 		BF0B54112AF05B340060DA89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0B54102AF05B340060DA89 /* Preview Assets.xcassets */; };
+		BF0B54222AF0AB7C0060DA89 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B54212AF0AB7C0060DA89 /* Position.swift */; };
+		BF0B54292AF0B0A00060DA89 /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B54282AF0B0A00060DA89 /* PositionView.swift */; };
+		BF0B542E2AF0D48E0060DA89 /*  RoundedCornersButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B542D2AF0D48E0060DA89 /*  RoundedCornersButtonStyle.swift */; };
+		BF0B54332AF0ED060060DA89 /* SoundOpelatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B54322AF0ED060060DA89 /* SoundOpelatorView.swift */; };
+		BF0B54382AF0F2650060DA89 /* LoudspeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B54372AF0F2650060DA89 /* LoudspeakerView.swift */; };
+		BFA680CC2AF2149700F8EF95 /* LocationInfomationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA680CB2AF2149700F8EF95 /* LocationInfomationModel.swift */; };
+		BFA680CE2AF21A8C00F8EF95 /* VectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA680CD2AF21A8C00F8EF95 /* VectorModel.swift */; };
+		BFBAA0972AF13E98005843B8 /* SoundOpelatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAA0962AF13E98005843B8 /* SoundOpelatorModel.swift */; };
+		BFF5629F2AF8CF1F002F923B /* AssociatedIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF5629E2AF8CF1F002F923B /* AssociatedIDModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF02453F2AF1B9000030D0A4 /* LoudspeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerModel.swift; sourceTree = "<group>"; };
+		BF0245452AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcViewControllerRepresentableModel.swift; sourceTree = "<group>"; };
 		BF0B54062AF05B320060DA89 /* AdHoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdHoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0B54092AF05B320060DA89 /* AdHocApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdHocApp.swift; sourceTree = "<group>"; };
-		BF0B540B2AF05B320060DA89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BF0B540B2AF05B320060DA89 /* TopPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPageView.swift; sourceTree = "<group>"; };
 		BF0B540D2AF05B340060DA89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF0B54102AF05B340060DA89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BF0B54212AF0AB7C0060DA89 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		BF0B54282AF0B0A00060DA89 /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
+		BF0B542D2AF0D48E0060DA89 /*  RoundedCornersButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " RoundedCornersButtonStyle.swift"; sourceTree = "<group>"; };
+		BF0B54322AF0ED060060DA89 /* SoundOpelatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOpelatorView.swift; sourceTree = "<group>"; };
+		BF0B54372AF0F2650060DA89 /* LoudspeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerView.swift; sourceTree = "<group>"; };
+		BFA680CA2AF20B0B00F8EF95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BFA680CB2AF2149700F8EF95 /* LocationInfomationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfomationModel.swift; sourceTree = "<group>"; };
+		BFA680CD2AF21A8C00F8EF95 /* VectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorModel.swift; sourceTree = "<group>"; };
+		BFBAA0962AF13E98005843B8 /* SoundOpelatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOpelatorModel.swift; sourceTree = "<group>"; };
+		BFF5629E2AF8CF1F002F923B /* AssociatedIDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedIDModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +74,10 @@
 		BF0B54082AF05B320060DA89 /* AdHoc */ = {
 			isa = PBXGroup;
 			children = (
+				BFA680CA2AF20B0B00F8EF95 /* Info.plist */,
 				BF0B54092AF05B320060DA89 /* AdHocApp.swift */,
-				BF0B540B2AF05B320060DA89 /* ContentView.swift */,
+				BF0B541E2AF0AA970060DA89 /* Model */,
+				BF0B541D2AF0AA850060DA89 /* View */,
 				BF0B540D2AF05B340060DA89 /* Assets.xcassets */,
 				BF0B540F2AF05B340060DA89 /* Preview Content */,
 			);
@@ -65,6 +90,72 @@
 				BF0B54102AF05B340060DA89 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BF0B541D2AF0AA850060DA89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF0B54342AF0F1D90060DA89 /* Loudspeaker */,
+				BF0B542F2AF0E89A0060DA89 /* SoundOpelator */,
+				BF0B542A2AF0D35A0060DA89 /* Style */,
+				BF0B54262AF0B0490060DA89 /* TopPage */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF0B541E2AF0AA970060DA89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF02453F2AF1B9000030D0A4 /* LoudspeakerModel.swift */,
+				BFBAA0962AF13E98005843B8 /* SoundOpelatorModel.swift */,
+				BF0245452AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift */,
+				BFA680CB2AF2149700F8EF95 /* LocationInfomationModel.swift */,
+				BFA680CD2AF21A8C00F8EF95 /* VectorModel.swift */,
+				BFF5629E2AF8CF1F002F923B /* AssociatedIDModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF0B54262AF0B0490060DA89 /* TopPage */ = {
+			isa = PBXGroup;
+			children = (
+				BF0B540B2AF05B320060DA89 /* TopPageView.swift */,
+				BF0B54272AF0B0560060DA89 /* SubView */,
+			);
+			path = TopPage;
+			sourceTree = "<group>";
+		};
+		BF0B54272AF0B0560060DA89 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				BF0B54212AF0AB7C0060DA89 /* Position.swift */,
+				BF0B54282AF0B0A00060DA89 /* PositionView.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		BF0B542A2AF0D35A0060DA89 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				BF0B542D2AF0D48E0060DA89 /*  RoundedCornersButtonStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		BF0B542F2AF0E89A0060DA89 /* SoundOpelator */ = {
+			isa = PBXGroup;
+			children = (
+				BF0B54322AF0ED060060DA89 /* SoundOpelatorView.swift */,
+			);
+			path = SoundOpelator;
+			sourceTree = "<group>";
+		};
+		BF0B54342AF0F1D90060DA89 /* Loudspeaker */ = {
+			isa = PBXGroup;
+			children = (
+				BF0B54372AF0F2650060DA89 /* LoudspeakerView.swift */,
+			);
+			path = Loudspeaker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +228,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF0B540C2AF05B320060DA89 /* ContentView.swift in Sources */,
+				BF0B542E2AF0D48E0060DA89 /*  RoundedCornersButtonStyle.swift in Sources */,
+				BFF5629F2AF8CF1F002F923B /* AssociatedIDModel.swift in Sources */,
+				BFBAA0972AF13E98005843B8 /* SoundOpelatorModel.swift in Sources */,
+				BFA680CC2AF2149700F8EF95 /* LocationInfomationModel.swift in Sources */,
+				BF0B54222AF0AB7C0060DA89 /* Position.swift in Sources */,
+				BF0245462AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift in Sources */,
+				BF0B54332AF0ED060060DA89 /* SoundOpelatorView.swift in Sources */,
+				BF0B54292AF0B0A00060DA89 /* PositionView.swift in Sources */,
+				BF0B54382AF0F2650060DA89 /* LoudspeakerView.swift in Sources */,
+				BFA680CE2AF21A8C00F8EF95 /* VectorModel.swift in Sources */,
+				BF0B540C2AF05B320060DA89 /* TopPageView.swift in Sources */,
+				BF0245402AF1B9000030D0A4 /* LoudspeakerModel.swift in Sources */,
 				BF0B540A2AF05B320060DA89 /* AdHocApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +377,7 @@
 				DEVELOPMENT_TEAM = PQFYQAUU88;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdHoc/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +407,7 @@
 				DEVELOPMENT_TEAM = PQFYQAUU88;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdHoc/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
