@@ -101,7 +101,6 @@ extension SoundOpelatorModel: NISessionDelegate {
                                                     toPeers: [self.associatedID[nearbyObject.discoveryToken]!],
                                                    with: .reliable
                                                   )
-                            print("send to \(nearbyObject.discoveryToken) + \(String(describing: self.associatedID[nearbyObject.discoveryToken]))")
                         }catch let error as NSError {
                             print(error.localizedDescription)
                         }
@@ -161,10 +160,13 @@ extension SoundOpelatorModel: MCSessionDelegate{
 }
 
 // MARK: - MCNearbyServiceAdvertiser
-extension SoundOpelatorModel:   MCNearbyServiceAdvertiserDelegate{
+extension SoundOpelatorModel: MCNearbyServiceAdvertiserDelegate{
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
-            print("InvitationFrom: \(peerID)")
         self.connectedTest = "connected!!"
         invitationHandler(true, self.mcSession)
     }
+}
+
+// MARK: - ConvexFull Calculation
+extension SoundOpelatorModel {
 }

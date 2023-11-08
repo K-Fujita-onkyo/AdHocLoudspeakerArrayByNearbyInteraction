@@ -25,6 +25,24 @@ class VectorModel {
         self.z = z
     }
     
+    func add(x: Float, y: Float, z: Float){
+        self.x += x
+        self.y += y
+        self.z += z
+    }
+    
+    func add(vec: VectorModel){
+        self.add(x: vec.x, y: vec.y, z: vec.z)
+    }
+    
+    func subtract(x: Float, y: Float, z: Float){
+        self.add(x: -x, y: -y, z: -z)
+    }
+    
+    func subtract(vec: VectorModel){
+        self.subtract(x: vec.x, y: vec.y, z: vec.z)
+    }
+    
     func normalize() {
         var distance: Float
         distance = sqrtf(pow(self.x, 2) + pow(self.y, 2) + pow(self.z, 2))
