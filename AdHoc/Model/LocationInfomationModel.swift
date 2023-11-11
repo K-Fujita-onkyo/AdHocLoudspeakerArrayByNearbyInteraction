@@ -38,7 +38,7 @@ class LocationInfomationModel: NSObject {
         strData.append(String(soundLocation.x) + ","
                                     + String(soundLocation.y) + ","
                                     + String(soundLocation.z) + "/")
-        var data: Data = strData.data(using: String.Encoding.utf8)!
+        let data: Data = strData.data(using: String.Encoding.utf8)!
         return data
     }
 }

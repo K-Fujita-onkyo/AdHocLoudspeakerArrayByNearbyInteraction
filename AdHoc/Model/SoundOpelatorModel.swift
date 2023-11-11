@@ -11,9 +11,6 @@ import NearbyInteraction
 
 class SoundOpelatorModel: NSObject {
     
-    // MARK: - Loudspeaker
-    var locationInfo: LocationInfomationModel = LocationInfomationModel(isConvexHull: false, l_x: 0, l_y: 0, l_z: 0, s_x: 0, s_y: 0, s_z: 0)
-    
     // MARK: - Test valiables
     var connectedTest: String = "not connected"
     
@@ -29,8 +26,9 @@ class SoundOpelatorModel: NSObject {
     var mcNearbyServiceAdvertiser: MCNearbyServiceAdvertiser!
     var mcPeerID: MCPeerID!
     
-    //MARK: - associated ID valiables
-    var associatedID: Dictionary<NIDiscoveryToken, MCPeerID> = [:]
+    //MARK: - associated by a NI tokenvaliables
+    var associatedPeerIDByNIToken: Dictionary<NIDiscoveryToken, MCPeerID> = [:]
+    var associatedLocationInfoByNIToken: Dictionary<NIDiscoveryToken, LocationInfomationModel> = [:]
     
     
     override init() {
@@ -88,26 +86,67 @@ class SoundOpelatorModel: NSObject {
 // MARK: - NISessionDelegate
 extension SoundOpelatorModel: NISessionDelegate {
     func session(_ session: NISession, didUpdate nearbyObjects: [NINearbyObject]) {
+        
+        var innerRoom: ConvexHullModel = ConvexHullModel()
+        // MARK: - Loudspeaker
+        var locationInfo: LocationInfomationModel = LocationInfomationModel(isConvexHull: false, l_x: 0, l_y: 0, l_z: 0, s_x: 0, s_y: 0, s_z: 0)
+        
         for nearbyObject in nearbyObjects {
+            
+        // TODO: - If the first diarection of a loudspeakers is nil, the system need to skip the calculation for convex hull.
+            /// Need to skip action
+            ///
+            ///
+        
+            locationInfo.isConvexHull = false
             if let distance = nearbyObject.distance {
                 if let diarection = nearbyObject.direction {
-                    self.locationInfo.loudspeakerLocation.x = Float(diarection.x.description)! * Float(distance.description)!
-                    self.locationInfo.loudspeakerLocation.y = Float(diarection.y.description)! * Float(distance.description)!
-                    self.locationInfo.loudspeakerLocation.z = Float(diarection.z.description)! * Float(distance.description)!
-                    //sendLocationData(locationData: self.locationInfo)
-                    if self.associatedID.keys.contains(nearbyObject.discoveryToken) {
-                        do{
-                            try self.mcSession.send(locationInfo.toData(),
-                                                    toPeers: [self.associatedID[nearbyObject.discoveryToken]!],
-                                                   with: .reliable
-                                                  )
-                        }catch let error as NSError {
-                            print(error.localizedDescription)
-                        }
-                    }
+                    locationInfo.loudspeakerLocation.x = Float(diarection.x.description)! * Float(distance.description)!
+                    locationInfo.loudspeakerLocation.y = Float(diarection.y.description)! * Float(distance.description)!
+                    locationInfo.loudspeakerLocation.z = Float(diarection.z.description)! * Float(distance.description)!
+                    self.associatedLocationInfoByNIToken.updateValue(locationInfo, forKey: nearbyObject.discoveryToken)
+                }else {
+                    print("Error: has no direction")
+                    return
                 }
+            } else {
+                print("Error: has no distance")
+                return
             }
         }
+        
+        print("IDsize: " + String(self.associatedPeerIDByNIToken.count))
+        
+        for location in self.associatedLocationInfoByNIToken {
+            print(location)
+            innerRoom.appendPoint(niDiscoveryToken: location.key,
+                                                        x: location.value.loudspeakerLocation.x * 100,
+                                                        y:  location.value.loudspeakerLocation.z * 100,
+                                                        z:  location.value.loudspeakerLocation.y * 100)
+        }
+        
+        print("ConvPointsize: " + String(innerRoom.niPoints.size))
+        innerRoom.calcConvexHull()
+        print("Convsize: " + String(innerRoom.niConvexHull.size))
+        
+        
+        for loudspeaker in innerRoom.niConvexHull.array {
+            self.associatedLocationInfoByNIToken[loudspeaker.niDiscoveryToken]?.isConvexHull = true
+        }
+        
+        //sendLocationData(locationData: self.locationInfo)
+        for nearbyObject in nearbyObjects {
+            if self.associatedPeerIDByNIToken.keys.contains(nearbyObject.discoveryToken){
+                do{
+                    try self.mcSession.send( self.associatedLocationInfoByNIToken[nearbyObject.discoveryToken]!.toData(), // TODO: - If the data is nil, the system must not send the data.
+                                                toPeers: [self.associatedPeerIDByNIToken[nearbyObject.discoveryToken]!],
+                                                with: .reliable)
+                    }catch let error as NSError {
+                        print(error.localizedDescription)
+                    }
+            }
+        }
+        
     }
 }
 
@@ -144,7 +183,7 @@ extension SoundOpelatorModel: MCSessionDelegate{
             print("Failed to decode data.")
             return
         }
-        self.associatedID.updateValue(peerID, forKey: peerDiscoverToken)
+        self.associatedPeerIDByNIToken.updateValue(peerID, forKey: peerDiscoverToken)
         let config = NINearbyPeerConfiguration(peerToken: peerDiscoverToken)
         self.niSession?.run(config)
     }

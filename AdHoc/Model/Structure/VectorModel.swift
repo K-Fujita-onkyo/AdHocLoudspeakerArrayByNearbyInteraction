@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NearbyInteraction
 
 class VectorModel {
     var x: Float
@@ -24,6 +25,24 @@ class VectorModel {
         self.y = y
         self.z = z
     }
+    
+    
+    
+    // MARK: - Functions for updating a vector
+    func update(x: Float, y: Float, z: Float){
+        self.x = x
+        self.y = y
+        self.z = z
+        var a: simd_float3
+    }
+    
+    func update(vec: SIMD3<Float>) {
+        self.x = vec.x
+        self.y = vec.y
+        self.z = vec.z
+    }
+    
+    //MARK: -Functions for vector calculatiion
     
     func add(x: Float, y: Float, z: Float){
         self.x += x

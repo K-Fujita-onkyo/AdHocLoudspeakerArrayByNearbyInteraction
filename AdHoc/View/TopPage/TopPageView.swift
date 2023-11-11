@@ -15,10 +15,12 @@ struct TopPageView: View {
     @State var loudspeakerPage: Int? = 0
     @State private var showLoudspeakerView: Bool = false
     @State private var showSoundOpelatorView: Bool = false
+    @State private var showConvexHullTestView: Bool = false
     
     private  var positionList: [Position] = [
         Position(id: 0, name: "Loudspeaker", imageName: "LoudspeakerMark"),
-        Position(id: 1, name: "Sound opelator", imageName: "SoundOpelatorMark")
+        Position(id: 1, name: "Sound opelator", imageName: "SoundOpelatorMark"),
+        Position(id: 2, name: "Convex Hull Test", imageName: "Sample")
     ]
     
     var body: some View {
@@ -55,22 +57,6 @@ struct TopPageView: View {
                         .font(.title2)
                         .foregroundColor(Color.white)
                     
-                    //                        NavigationLink(destination: LoudspeakerView(), tag: 1, selection: $loudspeakerPage) {
-                    //                            Button(action : {
-                    //                                self.loudspeakerPage = 1
-                    //                            }){
-                    //                                PositionView(position: positionList[0])
-                    //                            }.buttonStyle(RoundedCornersButtonStyle())
-                    //                        }
-                    //
-                    //                        NavigationLink(destination: SoundOpelatorView(), tag: 1, selection: $soundOpelatorPage) {
-                    //                            Button(action : {
-                    //                                self.soundOpelatorPage = 1
-                    //                            }){
-                    //                                PositionView(position: positionList[1])
-                    //                            }.buttonStyle(RoundedCornersButtonStyle())
-                    //                        }
-                    
                     Button(action: {
                         self.showLoudspeakerView.toggle()
                     }) {
@@ -85,6 +71,15 @@ struct TopPageView: View {
                         PositionView(position: positionList[1])
                     }.sheet(isPresented: self.$showSoundOpelatorView) {
                         SoundOpelatorView()
+                    }.buttonStyle(RoundedCornersButtonStyle())
+                    
+                    // ConvexHullTest
+                    Button(action: {
+                        self.showConvexHullTestView.toggle()
+                    }) {
+                        PositionView(position: positionList[2])
+                    }.sheet(isPresented: self.$showConvexHullTestView) {
+                        ConvexHullTestView()
                     }.buttonStyle(RoundedCornersButtonStyle())
                     
                 }

@@ -21,7 +21,7 @@ struct SoundOpelatorView: View {
             Text("host")
         }
         Button(action: {
-            print(soundOpelatorModel.associatedID)
+            print(soundOpelatorModel.associatedPeerIDByNIToken)
         }){
             Text("send")
         }

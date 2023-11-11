@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0082A12AFCC3C300A2E2A4 /* ConvexHullTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0082A02AFCC3C300A2E2A4 /* ConvexHullTestView.swift */; };
+		BF0082A42AFCC3F700A2E2A4 /* ConvexHullTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0082A32AFCC3F700A2E2A4 /* ConvexHullTestModel.swift */; };
 		BF0245402AF1B9000030D0A4 /* LoudspeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02453F2AF1B9000030D0A4 /* LoudspeakerModel.swift */; };
 		BF0245462AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0245452AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift */; };
 		BF0B540A2AF05B320060DA89 /* AdHocApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B54092AF05B320060DA89 /* AdHocApp.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF0082A02AFCC3C300A2E2A4 /* ConvexHullTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexHullTestView.swift; sourceTree = "<group>"; };
+		BF0082A32AFCC3F700A2E2A4 /* ConvexHullTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexHullTestModel.swift; sourceTree = "<group>"; };
 		BF02453F2AF1B9000030D0A4 /* LoudspeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerModel.swift; sourceTree = "<group>"; };
 		BF0245452AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcViewControllerRepresentableModel.swift; sourceTree = "<group>"; };
 		BF0B54062AF05B320060DA89 /* AdHoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdHoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +63,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF00829F2AFCC3AC00A2E2A4 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				BF0082A02AFCC3C300A2E2A4 /* ConvexHullTestView.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		BF0082A22AFCC3DE00A2E2A4 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				BF0082A32AFCC3F700A2E2A4 /* ConvexHullTestModel.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		BF0B53FD2AF05B320060DA89 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +119,7 @@
 		BF0B541D2AF0AA850060DA89 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF00829F2AFCC3AC00A2E2A4 /* Test */,
 				BF0B54342AF0F1D90060DA89 /* Loudspeaker */,
 				BF0B542F2AF0E89A0060DA89 /* SoundOpelator */,
 				BF0B542A2AF0D35A0060DA89 /* Style */,
@@ -110,6 +131,7 @@
 		BF0B541E2AF0AA970060DA89 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF0082A22AFCC3DE00A2E2A4 /* Test */,
 				BF02453F2AF1B9000030D0A4 /* LoudspeakerModel.swift */,
 				BFBAA0962AF13E98005843B8 /* SoundOpelatorModel.swift */,
 				BF0245452AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift */,
@@ -243,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF0B542E2AF0D48E0060DA89 /*  RoundedCornersButtonStyle.swift in Sources */,
+				BF0082A42AFCC3F700A2E2A4 /* ConvexHullTestModel.swift in Sources */,
 				BFBAA0972AF13E98005843B8 /* SoundOpelatorModel.swift in Sources */,
 				BFA680CC2AF2149700F8EF95 /* LocationInfomationModel.swift in Sources */,
 				BF0B54222AF0AB7C0060DA89 /* Position.swift in Sources */,
@@ -255,6 +278,7 @@
 				BFA680CE2AF21A8C00F8EF95 /* VectorModel.swift in Sources */,
 				BF0B540C2AF05B320060DA89 /* TopPageView.swift in Sources */,
 				BFB3E50C2AFA32A500FCC3FE /* ConvexHullModel.swift in Sources */,
+				BF0082A12AFCC3C300A2E2A4 /* ConvexHullTestView.swift in Sources */,
 				BF0245402AF1B9000030D0A4 /* LoudspeakerModel.swift in Sources */,
 				BF0B540A2AF05B320060DA89 /* AdHocApp.swift in Sources */,
 			);

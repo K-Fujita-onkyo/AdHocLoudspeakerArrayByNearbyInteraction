@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ConvexHullTestView: View {
+    var convexHull: ConvexHullTestModel = ConvexHullTestModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            //convexHull.test()
+            convexHull.test2()
+        }){
+            Text("ConvTest")
+        }
     }
 }
 
