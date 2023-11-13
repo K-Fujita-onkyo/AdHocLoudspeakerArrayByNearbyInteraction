@@ -16,6 +16,10 @@ class LoudspeakerModel: NSObject, ObservableObject{
     var connectedTest: String = "not connected"
     @Published var getMessageTest: String = "none given data"
     
+    var myLocationInfo: LocationInfomationModel =  LocationInfomationModel(isConvexHull: false, l_x: 0, l_y: 0, l_z: 0, s_x: 0, s_y: 0, s_z: 0)
+    @Published var isConvexText: String = "-"
+    @Published var loudspeakerLocationText: String = "-"
+    
     //MARK: - NearbyIntreaction valiables
     var niSession: NISession!
     var sharedTokenWithPeer: Bool!
@@ -27,6 +31,8 @@ class LoudspeakerModel: NSObject, ObservableObject{
     var mcNearbyServiceBrowser : MCNearbyServiceBrowser!
     var mcBrowserViewController: MCBrowserViewController!
     var mcPeerID: MCPeerID!
+    
+    
     
     
     override init() {
@@ -101,13 +107,9 @@ extension LoudspeakerModel: MCSessionDelegate{
     // for getting data
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         
-        guard let message = String(data: data, encoding: .utf8) 
-        else {
-            print("Failed to decode data.")
-            return
-        }
-        
-        self.getMessageTest = message
+        self.myLocationInfo.fromData(data: data)
+        self.isConvexText = self.myLocationInfo.getIsConvexHullText()
+        self.loudspeakerLocationText = "Loudspeaker's location: (x, y, z)  \n = " + self.myLocationInfo.getLoudspeakerLocationText()
         
         guard let peerDiscoverToken = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NIDiscoveryToken.self, from: data)
         else {

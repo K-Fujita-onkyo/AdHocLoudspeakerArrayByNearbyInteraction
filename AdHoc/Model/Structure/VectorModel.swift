@@ -33,7 +33,6 @@ class VectorModel {
         self.x = x
         self.y = y
         self.z = z
-        var a: simd_float3
     }
     
     func update(vec: SIMD3<Float>) {

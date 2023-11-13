@@ -90,13 +90,11 @@ extension SoundOpelatorModel: NISessionDelegate {
         var innerRoom: ConvexHullModel = ConvexHullModel()
         // MARK: - Loudspeaker
         var locationInfo: LocationInfomationModel = LocationInfomationModel(isConvexHull: false, l_x: 0, l_y: 0, l_z: 0, s_x: 0, s_y: 0, s_z: 0)
-        
+        var changeNIToken: [NIDiscoveryToken] = []
         for nearbyObject in nearbyObjects {
             
         // TODO: - If the first diarection of a loudspeakers is nil, the system need to skip the calculation for convex hull.
-            /// Need to skip action
-            ///
-            ///
+            /// Location: * 100 ::: if we will try to test in real hardware, please delete the calculation
         
             locationInfo.isConvexHull = false
             if let distance = nearbyObject.distance {
@@ -105,6 +103,7 @@ extension SoundOpelatorModel: NISessionDelegate {
                     locationInfo.loudspeakerLocation.y = Float(diarection.y.description)! * Float(distance.description)!
                     locationInfo.loudspeakerLocation.z = Float(diarection.z.description)! * Float(distance.description)!
                     self.associatedLocationInfoByNIToken.updateValue(locationInfo, forKey: nearbyObject.discoveryToken)
+                    changeNIToken.append(nearbyObject.discoveryToken)
                 }else {
                     print("Error: has no direction")
                     return
@@ -113,38 +112,64 @@ extension SoundOpelatorModel: NISessionDelegate {
                 print("Error: has no distance")
                 return
             }
+            
+            
         }
         
         print("IDsize: " + String(self.associatedPeerIDByNIToken.count))
         
+        for (key, _) in self.associatedLocationInfoByNIToken {
+            self.associatedLocationInfoByNIToken[key]?.isConvexHull = false
+        }
+        
         for location in self.associatedLocationInfoByNIToken {
             print(location)
             innerRoom.appendPoint(niDiscoveryToken: location.key,
-                                                        x: location.value.loudspeakerLocation.x * 100,
-                                                        y:  location.value.loudspeakerLocation.z * 100,
-                                                        z:  location.value.loudspeakerLocation.y * 100)
+                                                        x: location.value.loudspeakerLocation.x,
+                                                        y:  location.value.loudspeakerLocation.z,
+                                                        z:  location.value.loudspeakerLocation.y)
         }
         
         print("ConvPointsize: " + String(innerRoom.niPoints.size))
         innerRoom.calcConvexHull()
         print("Convsize: " + String(innerRoom.niConvexHull.size))
         
-        
+
         for loudspeaker in innerRoom.niConvexHull.array {
-            self.associatedLocationInfoByNIToken[loudspeaker.niDiscoveryToken]?.isConvexHull = true
+            print("Conv: \(String(describing: loudspeaker.niDiscoveryToken)), \(loudspeaker.vector.x),  \(loudspeaker.vector.y), \(loudspeaker.vector.z),")
+            if self.associatedLocationInfoByNIToken[loudspeaker.niDiscoveryToken]?.isConvexHull != true {
+                self.associatedLocationInfoByNIToken[loudspeaker.niDiscoveryToken]?.isConvexHull = true
+                if changeNIToken.contains(loudspeaker.niDiscoveryToken){
+                    changeNIToken.append(loudspeaker.niDiscoveryToken)
+                }
+            }
         }
         
-        //sendLocationData(locationData: self.locationInfo)
-        for nearbyObject in nearbyObjects {
-            if self.associatedPeerIDByNIToken.keys.contains(nearbyObject.discoveryToken){
-                do{
-                    try self.mcSession.send( self.associatedLocationInfoByNIToken[nearbyObject.discoveryToken]!.toData(), // TODO: - If the data is nil, the system must not send the data.
-                                                toPeers: [self.associatedPeerIDByNIToken[nearbyObject.discoveryToken]!],
-                                                with: .reliable)
-                    }catch let error as NSError {
-                        print(error.localizedDescription)
-                    }
+        for loudspeaker in innerRoom.niNotConvexHull.array {
+            print("NotConv: \(String(describing: loudspeaker.niDiscoveryToken)), \(loudspeaker.vector.x),  \(loudspeaker.vector.y), \(loudspeaker.vector.z),")
+            if self.associatedLocationInfoByNIToken[loudspeaker.niDiscoveryToken]?.isConvexHull != false {
+                self.associatedLocationInfoByNIToken[loudspeaker.niDiscoveryToken]?.isConvexHull = false
+                if changeNIToken.contains(loudspeaker.niDiscoveryToken){
+                    changeNIToken.append(loudspeaker.niDiscoveryToken)
+                }
             }
+        }
+        
+        for key in changeNIToken {
+            
+            guard let mcPeerID = self.associatedPeerIDByNIToken[key]
+            else {
+                print("mcPeerIDError")
+                continue
+            }
+            
+            do{
+                try self.mcSession.send( self.associatedLocationInfoByNIToken[key]!.toData(),
+                                                toPeers: [mcPeerID],
+                                                with: .reliable)
+                }catch let error as NSError {
+                            print(error.localizedDescription)
+                }
         }
         
     }

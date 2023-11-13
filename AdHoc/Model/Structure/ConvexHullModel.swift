@@ -12,16 +12,19 @@ class ConvexHullModel: NSObject {
     
     var niPoints: StackModel<NIVectorModel>
     var niConvexHull: StackModel<NIVectorModel>
+    var niNotConvexHull: StackModel<NIVectorModel>
     
     
     init(niPoints: StackModel<NIVectorModel>) {
         self.niPoints = niPoints
         self.niConvexHull = StackModel(array: [])
+        self.niNotConvexHull = StackModel(array: [])
     }
     
     override init(){
         self.niPoints = StackModel(array: [])
         self.niConvexHull = StackModel(array: [])
+        self.niNotConvexHull = StackModel(array: [])
     }
     
     func appendPoint(niDiscoveryToken: NIDiscoveryToken!, x: Float, y: Float, z: Float){
@@ -49,9 +52,9 @@ class ConvexHullModel: NSObject {
         self.sortPointsByRefAngle(referenceVector: smallestZPoint)
         //print("sort OK")
         
-//     for point in self.niPoints.array {
-//         print("vec: (" + String(point.vector.x) + ", " + String(point.vector.y) + ", " + String(point.vector.z)  + ")  angle:" + String(point.angleBetweenVectors(referenceVector: smallestZPoint)))
-//       }
+     for point in self.niPoints.array {
+         print("vec: (" + String(point.vector.x) + ", " + String(point.vector.y) + ", " + String(point.vector.z)  + ")  angle:" + String(point.angleBetweenVectorsOnXZPlane(referenceVector: NIVectorModel(x: 1, y: 0, z: 0))))
+       }
         
         // Push points into a stack convex hull
         self.niConvexHull.pushArray(elements: self.niPoints.array)
@@ -68,6 +71,7 @@ class ConvexHullModel: NSObject {
                     index += 1
                     print("indexNotChanged")
                 }else {
+                    self.niNotConvexHull.push(element: self.niConvexHull.array[index + 1])
                     self.niConvexHull.array.remove(at: index + 1)
                     print("indexChanged")
                     if index-1 >= 0 {
@@ -116,7 +120,7 @@ class ConvexHullModel: NSObject {
             let normVec2: NIVectorModel  = NIVectorModel(vector: normalize(vector2.vector - referenceVector.vector) )
             let normRefVec: NIVectorModel = NIVectorModel( vector:simd_float3(1, 0, 0) )
             
-            return normVec1.angleBetweenVectors(referenceVector: normRefVec) < normVec2.angleBetweenVectors(referenceVector: normRefVec)
+            return normVec1.angleBetweenVectorsOnXZPlane(referenceVector: normRefVec) < normVec2.angleBetweenVectorsOnXZPlane(referenceVector: normRefVec)
         })
     }
     
@@ -153,7 +157,11 @@ class ConvexHullModel: NSObject {
         return smallestZPoint
     }
     
-    func angleBetweenVectors(vec1: simd_float3, vec2: simd_float3) -> Float {
+    func angleBetweenVectorsOnXZPlane(vec1: simd_float3, vec2: simd_float3) -> Float {
+        
+        
+        let vec2_1: simd_float2 = simd_float2(vec1.x, vec1.z)
+        let vec2_2: simd_float2 = simd_float2(vec2.x, vec2.z)
         let dotProduct = simd_dot(vec1, vec2)
         let magnitudeProduct = simd_length(vec1) * simd_length(vec2)
         return acos(dotProduct / magnitudeProduct)

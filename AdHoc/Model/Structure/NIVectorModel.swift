@@ -38,9 +38,11 @@ class NIVectorModel {
         self.vector = simd_float3(x: 0, y: 0, z: 0)
     }
     
-    func angleBetweenVectors(referenceVector: NIVectorModel) -> Float {
-        let dotProduct = simd_dot(self.vector, referenceVector.vector)
-        let magnitudeProduct = simd_length(self.vector) * simd_length(referenceVector.vector)
+    func angleBetweenVectorsOnXZPlane(referenceVector: NIVectorModel) -> Float {
+        let myVec2: simd_float2 = simd_float2(self.vector.x, self.vector.z)
+        let refVec2: simd_float2 = simd_float2(referenceVector.vector.x, referenceVector.vector.z)
+        let dotProduct = simd_dot(myVec2, refVec2)
+        let magnitudeProduct = simd_length(myVec2) * simd_length(refVec2)
         return acos(dotProduct / magnitudeProduct)
     }
     
