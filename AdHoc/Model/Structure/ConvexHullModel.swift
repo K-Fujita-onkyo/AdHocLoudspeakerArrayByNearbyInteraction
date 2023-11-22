@@ -158,10 +158,6 @@ class ConvexHullModel: NSObject {
     }
     
     func angleBetweenVectorsOnXZPlane(vec1: simd_float3, vec2: simd_float3) -> Float {
-        
-        
-        let vec2_1: simd_float2 = simd_float2(vec1.x, vec1.z)
-        let vec2_2: simd_float2 = simd_float2(vec2.x, vec2.z)
         let dotProduct = simd_dot(vec1, vec2)
         let magnitudeProduct = simd_length(vec1) * simd_length(vec2)
         return acos(dotProduct / magnitudeProduct)

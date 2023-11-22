@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF0082A12AFCC3C300A2E2A4 /* ConvexHullTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0082A02AFCC3C300A2E2A4 /* ConvexHullTestView.swift */; };
+		BF0082A12AFCC3C300A2E2A4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0082A02AFCC3C300A2E2A4 /* TestView.swift */; };
 		BF0082A42AFCC3F700A2E2A4 /* ConvexHullTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0082A32AFCC3F700A2E2A4 /* ConvexHullTestModel.swift */; };
 		BF0245402AF1B9000030D0A4 /* LoudspeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02453F2AF1B9000030D0A4 /* LoudspeakerModel.swift */; };
 		BF0245462AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0245452AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift */; };
@@ -18,19 +18,24 @@
 		BF0B54222AF0AB7C0060DA89 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B54212AF0AB7C0060DA89 /* Position.swift */; };
 		BF0B54292AF0B0A00060DA89 /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B54282AF0B0A00060DA89 /* PositionView.swift */; };
 		BF0B542E2AF0D48E0060DA89 /*  RoundedCornersButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B542D2AF0D48E0060DA89 /*  RoundedCornersButtonStyle.swift */; };
-		BF0B54332AF0ED060060DA89 /* SoundOpelatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B54322AF0ED060060DA89 /* SoundOpelatorView.swift */; };
+		BF0B54332AF0ED060060DA89 /* SoundOperatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B54322AF0ED060060DA89 /* SoundOperatorView.swift */; };
 		BF0B54382AF0F2650060DA89 /* LoudspeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B54372AF0F2650060DA89 /* LoudspeakerView.swift */; };
+		BF5C56692B03B0FD0006082F /* ArrowShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C56682B03B0FD0006082F /* ArrowShape.swift */; };
+		BF6EE69A2B0616C300EAA35C /* AudioTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EE6992B0616C300EAA35C /* AudioTestModel.swift */; };
 		BF86BE592AFF987500826C69 /* LoudspeakerJoinButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF86BE582AFF987500826C69 /* LoudspeakerJoinButtonStyle.swift */; };
-		BFA680CC2AF2149700F8EF95 /* LocationInfomationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA680CB2AF2149700F8EF95 /* LocationInfomationModel.swift */; };
+		BF92B7D22B0651AE0022DBE1 /* Drums.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF92B7D12B0651AE0022DBE1 /* Drums.wav */; };
+		BFA680CC2AF2149700F8EF95 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA680CB2AF2149700F8EF95 /* MessageModel.swift */; };
 		BFA680CE2AF21A8C00F8EF95 /* VectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA680CD2AF21A8C00F8EF95 /* VectorModel.swift */; };
 		BFB3E5092AFA293800FCC3FE /* StackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3E5082AFA293800FCC3FE /* StackModel.swift */; };
 		BFB3E50C2AFA32A500FCC3FE /* ConvexHullModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3E50B2AFA32A500FCC3FE /* ConvexHullModel.swift */; };
 		BFB3E5102AFA34F700FCC3FE /* NIVectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3E50F2AFA34F700FCC3FE /* NIVectorModel.swift */; };
-		BFBAA0972AF13E98005843B8 /* SoundOpelatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAA0962AF13E98005843B8 /* SoundOpelatorModel.swift */; };
+		BFBAA0972AF13E98005843B8 /* SoundOperatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAA0962AF13E98005843B8 /* SoundOperatorModel.swift */; };
+		BFC42CD72B01E86E00403C50 /* SoundOperatorStartHostButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC42CD62B01E86E00403C50 /* SoundOperatorStartHostButtonStyle.swift */; };
+		BFC42CDD2B02179000403C50 /* ConvexHullShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC42CDC2B02179000403C50 /* ConvexHullShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BF0082A02AFCC3C300A2E2A4 /* ConvexHullTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexHullTestView.swift; sourceTree = "<group>"; };
+		BF0082A02AFCC3C300A2E2A4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		BF0082A32AFCC3F700A2E2A4 /* ConvexHullTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexHullTestModel.swift; sourceTree = "<group>"; };
 		BF02453F2AF1B9000030D0A4 /* LoudspeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerModel.swift; sourceTree = "<group>"; };
 		BF0245452AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcViewControllerRepresentableModel.swift; sourceTree = "<group>"; };
@@ -42,16 +47,21 @@
 		BF0B54212AF0AB7C0060DA89 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		BF0B54282AF0B0A00060DA89 /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
 		BF0B542D2AF0D48E0060DA89 /*  RoundedCornersButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " RoundedCornersButtonStyle.swift"; sourceTree = "<group>"; };
-		BF0B54322AF0ED060060DA89 /* SoundOpelatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOpelatorView.swift; sourceTree = "<group>"; };
+		BF0B54322AF0ED060060DA89 /* SoundOperatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOperatorView.swift; sourceTree = "<group>"; };
 		BF0B54372AF0F2650060DA89 /* LoudspeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerView.swift; sourceTree = "<group>"; };
+		BF5C56682B03B0FD0006082F /* ArrowShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowShape.swift; sourceTree = "<group>"; };
+		BF6EE6992B0616C300EAA35C /* AudioTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTestModel.swift; sourceTree = "<group>"; };
 		BF86BE582AFF987500826C69 /* LoudspeakerJoinButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerJoinButtonStyle.swift; sourceTree = "<group>"; };
+		BF92B7D12B0651AE0022DBE1 /* Drums.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Drums.wav; sourceTree = "<group>"; };
 		BFA680CA2AF20B0B00F8EF95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		BFA680CB2AF2149700F8EF95 /* LocationInfomationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfomationModel.swift; sourceTree = "<group>"; };
+		BFA680CB2AF2149700F8EF95 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		BFA680CD2AF21A8C00F8EF95 /* VectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorModel.swift; sourceTree = "<group>"; };
 		BFB3E5082AFA293800FCC3FE /* StackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackModel.swift; sourceTree = "<group>"; };
 		BFB3E50B2AFA32A500FCC3FE /* ConvexHullModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexHullModel.swift; sourceTree = "<group>"; };
 		BFB3E50F2AFA34F700FCC3FE /* NIVectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIVectorModel.swift; sourceTree = "<group>"; };
-		BFBAA0962AF13E98005843B8 /* SoundOpelatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOpelatorModel.swift; sourceTree = "<group>"; };
+		BFBAA0962AF13E98005843B8 /* SoundOperatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOperatorModel.swift; sourceTree = "<group>"; };
+		BFC42CD62B01E86E00403C50 /* SoundOperatorStartHostButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOperatorStartHostButtonStyle.swift; sourceTree = "<group>"; };
+		BFC42CDC2B02179000403C50 /* ConvexHullShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexHullShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +78,7 @@
 		BF00829F2AFCC3AC00A2E2A4 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				BF0082A02AFCC3C300A2E2A4 /* ConvexHullTestView.swift */,
+				BF0082A02AFCC3C300A2E2A4 /* TestView.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -77,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				BF0082A32AFCC3F700A2E2A4 /* ConvexHullTestModel.swift */,
+				BF6EE6992B0616C300EAA35C /* AudioTestModel.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -113,6 +124,7 @@
 		BF0B540F2AF05B340060DA89 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				BF92B7D12B0651AE0022DBE1 /* Drums.wav */,
 				BF0B54102AF05B340060DA89 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -121,6 +133,7 @@
 		BF0B541D2AF0AA850060DA89 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF5C56672B03B0D90006082F /* Shape */,
 				BF00829F2AFCC3AC00A2E2A4 /* Test */,
 				BF0B54342AF0F1D90060DA89 /* Loudspeaker */,
 				BF0B542F2AF0E89A0060DA89 /* SoundOpelator */,
@@ -135,9 +148,9 @@
 			children = (
 				BF0082A22AFCC3DE00A2E2A4 /* Test */,
 				BF02453F2AF1B9000030D0A4 /* LoudspeakerModel.swift */,
-				BFBAA0962AF13E98005843B8 /* SoundOpelatorModel.swift */,
+				BFBAA0962AF13E98005843B8 /* SoundOperatorModel.swift */,
 				BF0245452AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift */,
-				BFA680CB2AF2149700F8EF95 /* LocationInfomationModel.swift */,
+				BFA680CB2AF2149700F8EF95 /* MessageModel.swift */,
 				BFB3E50A2AFA298E00FCC3FE /* Structure */,
 			);
 			path = Model;
@@ -166,6 +179,7 @@
 			children = (
 				BF0B542D2AF0D48E0060DA89 /*  RoundedCornersButtonStyle.swift */,
 				BF86BE582AFF987500826C69 /* LoudspeakerJoinButtonStyle.swift */,
+				BFC42CD62B01E86E00403C50 /* SoundOperatorStartHostButtonStyle.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -173,7 +187,7 @@
 		BF0B542F2AF0E89A0060DA89 /* SoundOpelator */ = {
 			isa = PBXGroup;
 			children = (
-				BF0B54322AF0ED060060DA89 /* SoundOpelatorView.swift */,
+				BF0B54322AF0ED060060DA89 /* SoundOperatorView.swift */,
 			);
 			path = SoundOpelator;
 			sourceTree = "<group>";
@@ -184,6 +198,15 @@
 				BF0B54372AF0F2650060DA89 /* LoudspeakerView.swift */,
 			);
 			path = Loudspeaker;
+			sourceTree = "<group>";
+		};
+		BF5C56672B03B0D90006082F /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				BFC42CDC2B02179000403C50 /* ConvexHullShape.swift */,
+				BF5C56682B03B0FD0006082F /* ArrowShape.swift */,
+			);
+			path = Shape;
 			sourceTree = "<group>";
 		};
 		BFB3E50A2AFA298E00FCC3FE /* Structure */ = {
@@ -257,6 +280,7 @@
 			files = (
 				BF0B54112AF05B340060DA89 /* Preview Assets.xcassets in Resources */,
 				BF0B540E2AF05B340060DA89 /* Assets.xcassets in Resources */,
+				BF92B7D22B0651AE0022DBE1 /* Drums.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,20 +293,24 @@
 			files = (
 				BF0B542E2AF0D48E0060DA89 /*  RoundedCornersButtonStyle.swift in Sources */,
 				BF0082A42AFCC3F700A2E2A4 /* ConvexHullTestModel.swift in Sources */,
-				BFBAA0972AF13E98005843B8 /* SoundOpelatorModel.swift in Sources */,
-				BFA680CC2AF2149700F8EF95 /* LocationInfomationModel.swift in Sources */,
+				BFBAA0972AF13E98005843B8 /* SoundOperatorModel.swift in Sources */,
+				BFA680CC2AF2149700F8EF95 /* MessageModel.swift in Sources */,
 				BF0B54222AF0AB7C0060DA89 /* Position.swift in Sources */,
 				BFB3E5102AFA34F700FCC3FE /* NIVectorModel.swift in Sources */,
 				BF0245462AF1E7300030D0A4 /* mcViewControllerRepresentableModel.swift in Sources */,
+				BF5C56692B03B0FD0006082F /* ArrowShape.swift in Sources */,
+				BFC42CD72B01E86E00403C50 /* SoundOperatorStartHostButtonStyle.swift in Sources */,
 				BFB3E5092AFA293800FCC3FE /* StackModel.swift in Sources */,
-				BF0B54332AF0ED060060DA89 /* SoundOpelatorView.swift in Sources */,
+				BF0B54332AF0ED060060DA89 /* SoundOperatorView.swift in Sources */,
 				BF0B54292AF0B0A00060DA89 /* PositionView.swift in Sources */,
 				BF0B54382AF0F2650060DA89 /* LoudspeakerView.swift in Sources */,
 				BFA680CE2AF21A8C00F8EF95 /* VectorModel.swift in Sources */,
 				BF86BE592AFF987500826C69 /* LoudspeakerJoinButtonStyle.swift in Sources */,
+				BFC42CDD2B02179000403C50 /* ConvexHullShape.swift in Sources */,
+				BF6EE69A2B0616C300EAA35C /* AudioTestModel.swift in Sources */,
 				BF0B540C2AF05B320060DA89 /* TopPageView.swift in Sources */,
 				BFB3E50C2AFA32A500FCC3FE /* ConvexHullModel.swift in Sources */,
-				BF0082A12AFCC3C300A2E2A4 /* ConvexHullTestView.swift in Sources */,
+				BF0082A12AFCC3C300A2E2A4 /* TestView.swift in Sources */,
 				BF0245402AF1B9000030D0A4 /* LoudspeakerModel.swift in Sources */,
 				BF0B540A2AF05B320060DA89 /* AdHocApp.swift in Sources */,
 			);

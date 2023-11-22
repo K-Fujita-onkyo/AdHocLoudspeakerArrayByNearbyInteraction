@@ -12,6 +12,7 @@ struct LoudspeakerView: View {
     @ObservedObject var loudspeakerModel: LoudspeakerModel  = LoudspeakerModel()
     var body: some View {
    
+        
         ZStack{
             
             if loudspeakerModel.myLocationInfo.isConvexHull {
@@ -37,9 +38,23 @@ struct LoudspeakerView: View {
                     .font(.title2)
                     .foregroundColor(Color.white)
                 
-                Button("join"){
-                    loudspeakerModel.joinSession()
-                }.buttonStyle(LoudspeakerJoinButtonStyle())
+                HStack{
+                    Button("Join"){
+                        loudspeakerModel.joinSession()
+                    }.buttonStyle(LoudspeakerJoinButtonStyle())
+                    Button("Exit"){
+                        loudspeakerModel.stopSession()
+                    }.buttonStyle(LoudspeakerJoinButtonStyle())
+                }
+                
+//                HStack{
+//                    Button("Play"){
+//                    }.buttonStyle(LoudspeakerJoinButtonStyle())
+//                    Button("Stop"){
+//                        loudspeakerModel.stopAudio()
+//                    }.buttonStyle(LoudspeakerJoinButtonStyle())
+//                }
+                
                 
             }
         }

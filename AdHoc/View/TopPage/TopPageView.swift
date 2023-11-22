@@ -19,7 +19,7 @@ struct TopPageView: View {
     
     private  var positionList: [Position] = [
         Position(id: 0, name: "Loudspeaker", imageName: "LoudspeakerMark"),
-        Position(id: 1, name: "Sound opelator", imageName: "SoundOpelatorMark"),
+        Position(id: 1, name: "Sound operator", imageName: "SoundOperatorMark"),
         Position(id: 2, name: "Convex Hull Test", imageName: "Sample")
     ]
     
@@ -70,7 +70,7 @@ struct TopPageView: View {
                     }) {
                         PositionView(position: positionList[1])
                     }.sheet(isPresented: self.$showSoundOpelatorView) {
-                        SoundOpelatorView()
+                        SoundOperatorView()
                     }.buttonStyle(RoundedCornersButtonStyle())
                     
                     // ConvexHullTest
@@ -79,7 +79,7 @@ struct TopPageView: View {
                     }) {
                         PositionView(position: positionList[2])
                     }.sheet(isPresented: self.$showConvexHullTestView) {
-                        ConvexHullTestView()
+                        TestView()
                     }.buttonStyle(RoundedCornersButtonStyle())
                     
                 }
